@@ -1,0 +1,266 @@
+/*
+	// Mixins
+*/
+
+/*
+	// Colours
+*/
+
+@white: #ffffff;
+@slate: #171F20;
+@lighter-slate: #607D87;
+@green: #309149;
+@red: #D4412F;
+@yellow: #EAB251;
+@purple: #9B496F;
+@blue: #448392;
+
+@text: @white;
+@text-faded: fade(@white, 50%);
+
+@a: @white;
+@a-faded: fade(@a, 75%);
+
+@box: @blue;
+@box-faded: mix(@box, @slate, 20%); //fade(@box, 20%);
+@box-border: mix(@box, @slate, 50%);
+
+@bar: @green;
+@bar-faded: mix(@green, @slate, 10%);
+@bar-border: mix(@green, @slate, 50%);
+
+@foot: mix(@blue, @slate, 5%);
+
+
+
+/*
+	// Structure
+*/
+
+@height: 60px;
+@spacing: 10px;
+
+@process-percent: 40%;
+
+
+/*
+	// Document
+*/
+
+body {
+	background: @foot;
+	color: @text;
+	font-family: Consolas, monospace;
+	font-size: 14px;
+}
+
+.slate {
+	padding-bottom: 140px;
+	background: @slate;
+}
+
+
+.limit {
+	max-width: 1400px;
+}
+
+/*
+	// Generic style
+*/
+
+a {
+	color: @a;
+	&:hover {
+		color: @a-faded;
+		text-decoration: none;
+	}
+}
+
+.title {
+	font-family: Archive, sans-serif;
+}
+
+.l {
+	width: 100px;
+	color: @text-faded;
+	/*&:before {
+		content: '\a';
+		white-space: pre;
+	}*/
+}
+
+
+/*
+	// Generic position
+*/
+
+.right {
+	text-align: right;
+	//position: absolute;
+	//right: 0;
+}
+
+.valign {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.hide {
+	display: none;
+}
+
+
+/*
+	// Structure
+*/
+
+.head {
+	height: 200px;
+}
+
+.process-bar > div {
+	height: @height;
+	background: @bar;
+}
+
+#percent {
+	height: @height;
+	position: absolute;
+	top: 0;
+	left: @process-percent;
+	right: 0;
+	background: @bar-faded;
+	border-left: @spacing solid @bar-border;
+}
+
+.b-title, .b-title-sm {
+	margin-top: @spacing * 2;
+	height: @height;
+	background: @box-faded;
+	border-left: @spacing solid @box-border;
+	border-right: @spacing solid @slate;
+
+	.title {
+		float: left;
+	}
+
+	a {
+		padding-left: 5px;
+		// Icon colour
+		color: mix(@box, @slate, 60%);
+	}
+
+	&:hover, &.active {
+		background: @box;
+		border-left-color: @box;
+		border-right-color: @box;
+
+		a {
+			// Icon colour
+			color: mix(@box, @slate, 25%);
+			&:hover {
+				color: mix(@box, @slate, 50%);
+			}
+		}
+	}
+}
+
+.b-title-sm {
+	height: 40px;
+	line-height: 40px;
+	
+	.title {
+		float: none;
+	}
+}
+
+.b-edit, .b-operations, .b-close, .b-status {
+	background: @box;
+	font-size: 12px;
+	line-height: 1.1;
+}
+
+.b-status {
+	.hide;
+	margin-top: @spacing * 2;
+	height: @height;
+	border-left: @spacing solid @box;
+
+	span {
+		display: inline-block;
+	}
+}
+
+@media (max-width: 768px) {
+	.b-status {
+		margin-top: 0px;
+	}
+}
+
+.b-edit, .b-operations, .b-close {
+	.hide;
+	background: @box-faded;
+	border-left: @spacing solid @slate;
+
+	&:hover {
+		//background: @box;
+	}
+
+	span {
+		display: inline-block;
+	}
+}
+
+@media (max-width: 768px) {
+	.b-edit, .b-operations, .b-close {
+		left: 0 !important;
+	}
+}
+
+.b-panel {
+	.hide;
+	margin: @spacing -15px;
+	padding: @spacing 5px;
+	background: @box;
+	border-left: @spacing solid @box;
+}
+
+label {
+	.l;
+	font-weight: normal;
+}
+input, select {
+	background: none;
+	border: none;
+	border-bottom: 1px solid @box-faded;
+	width: 200px;
+	outline: 0;
+}
+
+input[type="checkbox"] {
+	width: inherit;
+}
+
+option {
+	background: @box-faded;
+	border: none;
+}
+
+#foot {
+	height: @height;
+	//position: fixed;
+	//bottom: 0;
+	background: @foot;
+	font-size: 20px;
+
+	a {
+		// Icon colour
+		color: mix(darken(@blue, 20%),  @slate, 75%);
+		&:hover {
+			color: mix(@blue, @slate, 50%);
+		}
+	}
+}
