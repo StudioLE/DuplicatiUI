@@ -25,6 +25,9 @@
 @box-faded: mix(@box, @slate, 20%); //fade(@box, 20%);
 @box-border: mix(@box, @slate, 50%);
 
+@nav: mix(@box, @slate, 10%);
+@nav-faded: mix(@box, @slate, 20%);
+
 @bar: @green;
 @bar-faded: mix(@green, @slate, 10%);
 @bar-border: mix(@green, @slate, 50%);
@@ -89,6 +92,14 @@ a {
 	}*/
 }
 
+.warn {
+	color: @red;
+}
+
+a.warn:hover {
+	color: fade(@red, 75%);
+}
+
 
 /*
 	// Generic position
@@ -118,7 +129,17 @@ a {
 */
 
 .head {
-	height: 200px;
+	//height: 200px;
+}
+
+.nav {
+	margin: 60px 0 40px 0;
+	float: right;
+	background: @nav;
+}
+
+.nav>li>a:hover {
+	background: @nav-faded;
 }
 
 .process-bar > div {
@@ -217,6 +238,19 @@ a {
 @media (max-width: 768px) {
 	.b-edit, .b-operations, .b-close {
 		left: 0 !important;
+	}
+}
+
+.b-edit a, .b-operations a, {
+	margin: 2px 0;
+	padding: 3px 0;
+	display: block;
+
+	&:hover {
+		margin: 2px -15px;
+		border-left: 15px solid @box;
+		border-right: 15px solid @box;
+		background: @box;
 	}
 }
 

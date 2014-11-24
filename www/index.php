@@ -20,9 +20,25 @@
 <div class="slate">
 <div class="limit">
 
-	<div class="head"></div>
-
 <div class="container-fluid">
+
+	<div class="row head">
+		<div class="col-sm-offset-1 col-sm-5">
+			<a href="#" class="logo">Duplicati</a>
+		</div>
+		<div class="col-sm-5">
+			<ul class="nav nav-pills">
+				<li role="presentation"><a href="#" rel="pause"><i class="fa fa-pause"></i></a></li>
+				<li role="presentation"><a href="#">log</a></li>
+				<li role="presentation"><a href="#">updates</a></li>
+				<li role="presentation"><a href="#">options</a></li>
+				<li role="presentation"><a href="#">about</a></li>
+			</ul>
+		</div>
+		
+		
+		
+	</div>
 
 	<!-- 
 			// Status bar
@@ -30,7 +46,7 @@
 
 	<div class="row process-bar">
 		<div class="col-xs-1">
-			BLANK
+			
 		</div>
 		<div class="col-xs-3">
 			<div class="valign">
@@ -100,16 +116,16 @@ $b_id++; ?>
 
 		<!-- // Backup edit -->
 		<div class="col-sm-5 b-edit" id="b-e-<?=$b_id?>">
-			<div>
+			<a href="#<?=$b_id?>-name" rel="panel">
 				<span class="l">Name</span> <span>My Docs</span>
-			</div>
-			<div>
+			</a>
+			<a href="#<?=$b_id?>-folders" rel="panel">
 				<span class="l">Folders</span> <span>C:\...\Work\, C:\...\Finances\,</span>
-			</div>
-			<div>
+			</a>
+			<a href="#<?=$b_id?>-destination" rel="panel">
 				<span class="l">Destination</span> <span>S3 Bucket: backups</span>
-			</div>
-			<div class="b-panel">
+			</a>
+			<div class="b-panel" id="b-<?=$b_id?>-destination">
 				<div class="">
 					<label for="i1">Destination</label>
 					<select id="i2">
@@ -151,44 +167,44 @@ $b_id++; ?>
 					<input type="checkbox">
 				</div>
 			</div>
-			<div>
+			<a href="#b-<?=$b_id?>-schedule" rel="panel">
 				<span class="l">Schdule</span> <span>Daily at 1pm</span>
-			</div>
-			<div>
+			</a>
+			<a href="#b-<?=$b_id?>-options" rel="panel">
 				<span class="l">Options</span> <span>None specified</span>
-			</div>
+			</a>
 
 		</div>
 
 		<!-- // Backup operations -->
-		<div class="col-sm-5 b-edit" id="b-o-<?=$b_id?>">			
-				<div>
-					<span class="l">Backup</span> <a href="">Run now</a>
-				</div>
-				<div>
-					<span class="l"></span> <a href="">Restore files</a>
-				</div>
-				<div>
-					<span class="l"></span> <a href="">Export</a>
-				</div>
-				<div>
-					<span class="l"></span> <a href="" class="warn">Delete</a>
-				</div>		
-				<div>
-					<span class="l">Advanced</span> <a href="">Verify backup files</a>
-				</div>
-				<div>
-					<span class="l"></span> <a href="">Repair local database</a>
-				</div>
-				<div>
-					<span class="l"></span> <a href="" class="warn">Delete local database</a>
-				</div>
-				<div>
-					<span class="l">Reporting</span> <a href="">Show log</a>
-				</div>
-				<div>
-					<span class="l"></span> <a href="">Create bug report</a>
-				</div>
+		<div class="col-sm-5 b-operations" id="b-o-<?=$b_id?>">			
+				<a href="#">
+					<span class="l">Backup</span> <span>Run now</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Restore files</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Export</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span class="warn">Delete</span>
+				</a>		
+				<a href="#">
+					<span class="l">Advanced</span> <span>Verify backup files</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Repair local database</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span class="warn">Delete local database</span>
+				</a>
+				<a href="#">
+					<span class="l">Reporting</span> <span>Show log</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Create bug report</span>
+				</a>
 		</div>
 
 

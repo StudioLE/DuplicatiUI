@@ -50,6 +50,13 @@ $(function() {
 		});
 	});
 
+	$('a[rel="panel"]').click(function(e) {
+		e.stopPropagation();
+		var p_id = $(this).attr('href').substr(1);
+		$('#b-' + p_id).slideDown();
+		$(this).hide();
+	});
+
 
 	function close_all(type) {
 		if(type) {
