@@ -1,0 +1,124 @@
+[
+  {
+    "Schedule": {
+      "ID": 1,
+      "Tags": [
+        "ID=1"
+      ],
+      "Time": "2014-11-25T13:00:00Z",
+      "Repeat": "1D",
+      "LastRun": "2014-11-24T14:42:54Z",
+      "Rule": "AllowedWeekDays=Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday",
+      "AllowedDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ]
+    },
+    "Backup": {
+      "ID": "1",
+      "Name": "Work",
+      "Tags": [],
+      "TargetURL": "s3://le-duplicati2/work?auth-username=AKIAJOHPICYQOVLCKE7A&auth-password=pI3mLONZJqUtxlWpebWECnWhItZUsDY2KoKXug%2Bf&s3-server-name=s3.amazonaws.com&s3-location-constraint=EU",
+      "DBPath": "C:\\Users\\LE\\AppData\\Roaming\\Duplicati\\EGVZPUPDSO.sqlite",
+      "Sources": null,
+      "Settings": null,
+      "Filters": null,
+      "Metadata": {
+        "LastErrorDate": "20141124T144512Z",
+        "LastErrorMessage": "The remote name could not be resolved: 'le-duplicati2.s3.amazonaws.com'",
+        "LastDuration": "00:00:21.6452381",
+        "LastStarted": "20141122T130736Z",
+        "LastFinished": "20141122T130757Z",
+        "SourceFilesSize": "3459052056",
+        "SourceFilesCount": "2031",
+        "SourceSizeString": "3.22 GB",
+        "LastBackupStarted": "20141120T163319Z",
+        "LastBackupFinished": "20141120T164421Z",
+        "LastBackupDate": "20141120T163320Z",
+        "BackupListCount": "2",
+        "TotalQuotaSpace": "0",
+        "FreeQuotaSpace": "0",
+        "AssignedQuotaSpace": "-1",
+        "TargetFilesSize": "1455593250",
+        "TargetFilesCount": "58",
+        "TargetSizeString": "1.36 GB"
+      },
+      "IsTemporary": false
+    }
+  },
+  {
+    "Schedule": null,
+    "Backup": {
+      "ID": "2",
+      "Name": "Photography",
+      "Tags": [],
+      "TargetURL": "s3://le-duplicati2/photography?auth-username=AKIAJOHPICYQOVLCKE7A&auth-password=pI3mLONZJqUtxlWpebWECnWhItZUsDY2KoKXug%2Bf&s3-server-name=s3.amazonaws.com&s3-location-constraint=EU",
+      "DBPath": "C:\\Users\\LE\\AppData\\Roaming\\Duplicati\\UFGWGEGLBQ.sqlite",
+      "Sources": null,
+      "Settings": null,
+      "Filters": null,
+      "Metadata": {
+        "LastErrorDate": "20141121T111518Z",
+        "LastErrorMessage": "Thread was being aborted."
+      },
+      "IsTemporary": false
+    }
+  },
+  {
+    "Schedule": {
+      "ID": 2,
+      "Tags": [
+        "ID=3"
+      ],
+      "Time": "2014-11-25T13:00:00Z",
+      "Repeat": "1D",
+      "LastRun": "2014-11-24T14:42:55Z",
+      "Rule": "AllowedWeekDays=Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday",
+      "AllowedDays": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ]
+    },
+    "Backup": {
+      "ID": "3",
+      "Name": "RealFlow",
+      "Tags": [],
+      "TargetURL": "s3://le-duplicati2/realflow?auth-username=AKIAJOHPICYQOVLCKE7A&auth-password=pI3mLONZJqUtxlWpebWECnWhItZUsDY2KoKXug%2Bf&s3-server-name=s3.amazonaws.com&s3-location-constraint=EU",
+      "DBPath": "C:\\Users\\LE\\AppData\\Roaming\\Duplicati\\OYLQPINPDZ.sqlite",
+      "Sources": null,
+      "Settings": null,
+      "Filters": null,
+      "Metadata": {
+        "LastDuration": "00:00:13.4637701",
+        "LastStarted": "20141123T141306Z",
+        "LastFinished": "20141123T141320Z",
+        "SourceFilesSize": "248664801",
+        "SourceFilesCount": "67",
+        "SourceSizeString": "237.15 MB",
+        "LastBackupStarted": "20141123T141306Z",
+        "LastBackupFinished": "20141123T141320Z",
+        "LastBackupDate": "20141120T230947Z",
+        "BackupListCount": "2",
+        "TotalQuotaSpace": "0",
+        "FreeQuotaSpace": "0",
+        "AssignedQuotaSpace": "-1",
+        "TargetFilesSize": "35064318",
+        "TargetFilesCount": "6",
+        "TargetSizeString": "33.44 MB",
+        "LastErrorDate": "20141124T144556Z",
+        "LastErrorMessage": "The remote name could not be resolved: 'le-duplicati2.s3.amazonaws.com'"
+      },
+      "IsTemporary": false
+    }
+  }
+]

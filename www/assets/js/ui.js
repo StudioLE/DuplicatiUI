@@ -36,7 +36,7 @@ $(function() {
 	/*
 	 * Panel click
 	 */
-	$('a[rel="edit"], a[rel="actions"]').click(function(e) {
+	$(document.body).on('click', 'a[rel="edit"], a[rel="actions"]', function(e) {
 		e.stopPropagation();
 
 		// Close all currently open panels
@@ -63,7 +63,7 @@ $(function() {
 	/*
 	 * Section click
 	 */
-	$('a[rel="section"]').click(function(e) {
+	$(document.body).on('click', 'a[rel="section"]', function(e) {
 		e.stopPropagation();
 
 		// Close all currently open sections
@@ -85,8 +85,10 @@ $(function() {
 	 */
 	function close_sections() {
 		$('.b-section:visible').each(function() {
-			//console.log($(this).attr('id'));
+			// Hide the section
 			$('#' + $(this).attr('id')).slideUp();
+
+			// Show the trigger element
 			$('#' + $(this).attr('id') + '-trigger').slideDown();
 		});
 	}
@@ -94,7 +96,6 @@ $(function() {
 
 	/**
 	 * Close all currently open .b-status, .b-edit, b-actions
-	 * 
 	 */
 	function close_all(type) {
 		if(type) {
