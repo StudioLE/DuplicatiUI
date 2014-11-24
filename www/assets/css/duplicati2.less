@@ -358,16 +358,13 @@ option {
 
 #foot {
 	height: @height;
-	//position: fixed;
-	//bottom: 0;
-	background: @foot;
-	font-size: 20px;
+	font-size: 22px;
 
 	a {
 		// Icon colour
-		color: mix(darken(@blue, 20%),  @slate, 75%);
+		color: @box-border;
 		&:hover {
-			color: mix(@blue, @slate, 50%);
+			color: @box-faded;
 		}
 	}
 }
