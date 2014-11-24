@@ -1,100 +1,109 @@
 $(function() {
 
 
-	/*$('.b-title').hover(function(e) {
-		if( ! $(this).hasClass('active')) {
-			var b_id = $(this).attr('id').substr(4);
-			$('#b-s-' + b_id).show();
-		}
-	}, function() {
-		if( ! $(this).hasClass('active')) {
-			var b_id = $(this).attr('id').substr(4);
-			$('#b-s-' + b_id).hide();
-		}
-	});*/
+	/*
+	 * Log click
+	 */
+	$('a[rel="log"], a[rel="log-close"]').click(function(e) {
+		e.preventDefault();
+
+		// Show the log
+		$('#log').slideToggle();
+	});
 
 
-/*
-	// Title click
-*/
-
+	/*
+	 * Title click
+	 */
 	$('.b-title').click(function(e) {
+		// Close all currently open panels
 		close_all();
+
+		// If this status is not already visible
 		if( ! $(this).hasClass('active')) {
+
+			// Get the backup id
 			var b_id = $(this).attr('id').substr(4);
+
+			// Show the status with id
 			$('#b-s-' + b_id).fadeIn();
+
 			$(this).addClass('active');
 		}
 	});
 
 
-/*
-	// Edit click
-*/
-
-	$('a[rel="edit"], a[rel="operations"]').click(function(e) {
+	/*
+	 * Panel click
+	 */
+	$('a[rel="edit"], a[rel="actions"]').click(function(e) {
 		e.stopPropagation();
-		var b_title = $(this).parents('.b-title');
-		var b_id = $(this).attr('href').substr(1);
-		var method = $(this).attr('rel').substr(0,1);
 
-		console.log('edit');
+		// Close all currently open panels
+		close_all();
+
+		// Title element
+		var b_title = $(this).parents('.b-title');
+		// Backup ID
+		var b_id = $(this).attr('href').substr(1);
+		// Rel method first letter
+		var method = $(this).attr('rel').substr(0,1);
 	
 		b_title.addClass('active');
+
+		// Show the status
 		$('#b-s-' + b_id).show(0, function(){
-			$('#b-' + method + '-' + b_id).slideDown().position({
-				my: 'right top',
-				at: 'right bottom',
-				of: '#b-s-' + b_id
-			});
+
+			// Show the operation / edit section
+			$('#b-' + method + '-' + b_id).slideDown();
 		});
 	});
 
-	$('a[rel="panel"]').click(function(e) {
+
+	/*
+	 * Section click
+	 */
+	$('a[rel="section"]').click(function(e) {
 		e.stopPropagation();
+
+		// Close all currently open sections
+		close_sections();
+		
+		// Get the requested section id
 		var p_id = $(this).attr('href').substr(1);
+
+		// Show the section with id
 		$('#b-' + p_id).slideDown();
+
+		// Hide the trigger element
 		$(this).hide();
 	});
 
 
+	/**
+	 * Close all currently open sections
+	 */
+	function close_sections() {
+		$('.b-section:visible').each(function() {
+			//console.log($(this).attr('id'));
+			$('#' + $(this).attr('id')).slideUp();
+			$('#' + $(this).attr('id') + '-trigger').slideDown();
+		});
+	}
+
+
+	/**
+	 * Close all currently open .b-status, .b-edit, b-actions
+	 * 
+	 */
 	function close_all(type) {
 		if(type) {
 			$('.b-' + type).hide();
 		}
 		else {
-			$('.b-status, .b-edit, b-operations').hide();
+			$('.b-status, .b-actions, .b-edit').hide();
 			$('.b-title').removeClass('active');
 		}
 	}
-
-	process_bar();
-
-	function process_bar() {
-		var bar = $('#percent');
-		var percent = 0;
-
-		var files = $('#files-remain');
-		var gb = $('#gb-remain');
-
-		var files_o = Number(files.html());
-		var gb_o = Number(gb.html());
-
-		var files_c = Number(files.html());
-		var gb_c = Number(gb.html());
-
-		bar.css('left', percent);
-		var interval = setInterval(function() {
-			percent += 1;
-			bar.css('left', percent + '%');
-			gb_c = gb_o * ( (100 - percent) / 100);
-			files_c = files_o * ( (100 - percent) / 100);
-			gb.html(gb_c.toFixed(2));
-			files.html(files_c.toFixed(0));
-			if (percent >= 100) {
-				clearInterval(interval);
-			}
-		}, 500);
-}
 
 });

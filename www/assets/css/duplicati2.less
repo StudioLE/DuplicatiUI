@@ -16,10 +16,12 @@
 @blue: #448392;
 
 @text: @white;
-@text-faded: fade(@white, 50%);
+@text-faded: lighten(mix(@box, @slate, 20%), 25%); //fade(@white, 50%);
+@text-faded-active3: mix(mix(@box, @slate, 50%), @white, 25%);
+@text-faded-active: mix(@blue, @white, 55%);
 
-@a: @white;
-@a-faded: fade(@a, 75%);
+@a: mix(mix(@box, @slate, 50%), @white, 25%);
+@a-faded: mix(@a, @slate, 10%);
 
 @box: @blue;
 @box-faded: mix(@box, @slate, 20%); //fade(@box, 20%);
@@ -33,7 +35,6 @@
 @bar-border: mix(@green, @slate, 50%);
 
 @foot: mix(@blue, @slate, 5%);
-
 
 
 /*
@@ -77,6 +78,9 @@ a {
 		color: @a-faded;
 		text-decoration: none;
 	}
+	&:focus {
+		color: @a;
+	}
 }
 
 .title {
@@ -93,7 +97,7 @@ a {
 }
 
 .warn {
-	color: @red;
+	color: mix(@red, @white, 75%);
 }
 
 a.warn:hover {
@@ -125,7 +129,7 @@ a.warn:hover {
 
 
 /*
-	// Structure
+	// Head
 */
 
 .head {
@@ -142,6 +146,11 @@ a.warn:hover {
 	background: @nav-faded;
 }
 
+
+/*
+	// Process Bar
+*/
+
 .process-bar > div {
 	height: @height;
 	background: @bar;
@@ -157,6 +166,35 @@ a.warn:hover {
 	border-left: @spacing solid @bar-border;
 }
 
+
+/*
+	// Log
+*/
+
+#log {
+	.hide;
+}
+
+.log {
+	margin-top: @spacing * 2;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: @box-faded;
+}
+
+#log-box {
+	margin-top: @spacing;
+	height: 100px;
+	//background: fade(@slate, 50%);
+	font-size: 12px;
+	overflow-y: scroll;
+}
+
+
+/*
+	// Backup
+*/
+
 .b-title, .b-title-sm {
 	margin-top: @spacing * 2;
 	height: @height;
@@ -168,10 +206,14 @@ a.warn:hover {
 		float: left;
 	}
 
+	.status {
+		color: @text-faded;
+	}
+
 	a {
 		padding-left: 5px;
 		// Icon colour
-		color: mix(@box, @slate, 60%);
+		//color: mix(@box, @slate, 50%);
 	}
 
 	&:hover, &.active {
@@ -179,11 +221,15 @@ a.warn:hover {
 		border-left-color: @box;
 		border-right-color: @box;
 
+		.status {
+			color: @text-faded-active;
+		}
+
 		a {
 			// Icon colour
-			color: mix(@box, @slate, 25%);
+			//color: mix(@box, @slate, 60%);
 			&:hover {
-				color: mix(@box, @slate, 50%);
+				//color: @slate;
 			}
 		}
 	}
@@ -198,7 +244,7 @@ a.warn:hover {
 	}
 }
 
-.b-edit, .b-operations, .b-close, .b-status {
+.b-edit, .b-actions, .b-close, .b-status {
 	background: @box;
 	font-size: 12px;
 	line-height: 1.1;
@@ -212,6 +258,11 @@ a.warn:hover {
 
 	span {
 		display: inline-block;
+		color: @a;
+	}
+
+	.l {
+		color: @text-faded-active;
 	}
 }
 
@@ -221,8 +272,17 @@ a.warn:hover {
 	}
 }
 
-.b-edit, .b-operations, .b-close {
+.b-space {
+	margin-top: 21px;
+	height: 60px;
+	float: right;
+}
+
+.b-edit, .b-actions, .b-close {
 	.hide;
+	padding-top: @spacing;
+	padding-bottom: @spacing;
+	float: right;
 	background: @box-faded;
 	border-left: @spacing solid @slate;
 
@@ -236,12 +296,12 @@ a.warn:hover {
 }
 
 @media (max-width: 768px) {
-	.b-edit, .b-operations, .b-close {
+	.b-edit, .b-actions, .b-close {
 		left: 0 !important;
 	}
 }
 
-.b-edit a, .b-operations a, {
+.b-edit a, .b-actions a {
 	margin: 2px 0;
 	padding: 3px 0;
 	display: block;
@@ -251,15 +311,23 @@ a.warn:hover {
 		border-left: 15px solid @box;
 		border-right: 15px solid @box;
 		background: @box;
+	
+		.l {
+			color: @text-faded-active;
+		}
 	}
 }
 
-.b-panel {
+.b-section {
 	.hide;
 	margin: @spacing -15px;
 	padding: @spacing 5px;
 	background: @box;
 	border-left: @spacing solid @box;
+	
+	.l, label {
+		color: @text-faded-active;
+	}
 }
 
 label {
@@ -282,6 +350,11 @@ option {
 	background: @box-faded;
 	border: none;
 }
+
+
+/*
+	// Foot
+*/
 
 #foot {
 	height: @height;
