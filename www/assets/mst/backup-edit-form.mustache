@@ -1,0 +1,20 @@
+	{{#if text}}
+		<label for="i2">{{label}}</label>
+		<input type="text" id="i2">
+	{{/if}}
+	{{#if password}}
+		<label for="i2">{{label}}</label>
+		<input type="password" id="i2">
+	{{/if}}
+	{{#if checkbox}}
+		<label for="i2">{{label}}</label>
+		<input type="checkbox">
+	{{/if}}
+	{{#if select}}
+		<label for="i2">{{label}}</label>
+		<select id="i2">
+		{{#options}}
+		 	<option>{{.}}</option>
+		{{/options}}
+		</select>
+	{{/if}}

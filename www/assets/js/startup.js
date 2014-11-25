@@ -8,8 +8,14 @@ $(function() {
 
 		// Get data 
 		$.getJSON('assets/demo/demo-list-backups.json', function(data) {
+			// Deprecated Mustache in favour of Handlebars
 			// Render the template
-			var rendered = Mustache.render(template, {
+			//var rendered = Mustache.render(template, {
+			//	'backups': data
+			//});
+		
+			var compiled_template = Handlebars.compile(template);
+			var rendered = compiled_template({
 				'backups': data
 			});
 			

@@ -1,6 +1,5 @@
 $(function() {
 
-
 	/*
 	 * Log click
 	 */
@@ -55,14 +54,25 @@ $(function() {
 		// If the method is edit then we'll need to fetch data for the backup
 		if(method == 'e') {
 			$.get('assets/mst/backup-edit.mustache', function(edit_template) {
-				$.get('assets/mst/backup-edit-section.mustache', function(section_template) {
+				$.get('assets/mst/backup-edit-form.mustache', function(form_template) {
+					// Deprecated Mustache in favour of Handlebars
 					// Render the template
-					var rendered = Mustache.render(edit_template, {
+					/*var rendered = Mustache.render(edit_template, {
 						'sections': lang.backup_edit_sections,
 						'b_id': b_id
 					},
 					{
 						'section': section_template,
+					});*/
+
+					// Render the template
+					Handlebars.registerPartial('form',
+						Handlebars.compile(form_template)
+					);
+					var compiled_template = Handlebars.compile(edit_template);
+					var rendered = compiled_template({
+						'sections': lang.backup_edit,
+						'b_id': b_id
 					});
 					
 					// Output the template
