@@ -158,6 +158,12 @@
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+<script>
+	$(function() {
+		// Prevent ajax caching while under development
+		$.ajaxSetup({ cache: false });
+	});
+</script>
 <script src="assets/js/lang.js"></script>
 <script src="assets/js/startup.js"></script>
 <script src="assets/js/ui.js"></script>

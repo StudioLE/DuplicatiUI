@@ -272,16 +272,18 @@ a.warn:hover {
 	}
 }
 
-.b-space {
-	margin-top: 21px;
-	height: 60px;
-	float: right;
+#b-list > .row {
+	position: relative;
 }
 
 .b-edit, .b-actions, .b-close {
 	.hide;
 	padding-top: @spacing;
 	padding-bottom: @spacing;
+	position: absolute;
+	top: (@height + @spacing * 2);
+	right: 8.33333333%;
+	z-index: 1;
 	float: right;
 	background: @box-faded;
 	border-left: @spacing solid @slate;
