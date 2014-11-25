@@ -244,7 +244,7 @@ a.warn:hover {
 	}
 }
 
-.b-edit, .b-actions, .b-close, .b-status {
+.b-edit, .b-actions, .b-status {
 	background: @box;
 	font-size: 12px;
 	line-height: 1.1;
@@ -272,18 +272,23 @@ a.warn:hover {
 	}
 }
 
-#b-list > .row {
-	position: relative;
+@media (min-width: 768px) {
+	#b-list > .row {
+		position: relative;
+	}
+	
+	.b-edit, .b-actions {
+		position: absolute;
+		top: (@height + @spacing * 2);
+		right: 8.33333333%;
+		z-index: 1;
+	}
 }
 
-.b-edit, .b-actions, .b-close {
+.b-edit, .b-actions {
 	.hide;
 	padding-top: @spacing;
 	padding-bottom: @spacing;
-	position: absolute;
-	top: (@height + @spacing * 2);
-	right: 8.33333333%;
-	z-index: 1;
 	float: right;
 	background: @box-faded;
 	border-left: @spacing solid @slate;
@@ -298,7 +303,7 @@ a.warn:hover {
 }
 
 @media (max-width: 768px) {
-	.b-edit, .b-actions, .b-close {
+	.b-edit, .b-actions {
 		left: 0 !important;
 	}
 }
