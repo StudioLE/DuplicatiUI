@@ -137,8 +137,51 @@ a.warn:hover {
 	//height: 200px;
 }
 
+.logo {
+	margin-top: 30px;
+	height: @height;
+	display: inline-block;
+	clear: both;
+
+	img {
+		height: @height - 5;
+		display: block;
+		float: left;
+	}
+
+	span {
+		.title;
+		margin-left: 10px;
+		display: block;
+		float: left;
+		color: mix(@white, @slate, 15%);
+		font-size: 32px;
+		line-height: 60px;
+		text-transform: initial;
+	}
+
+	&:hover span {
+		color: mix(@white, @slate, 40%);
+	}
+}
+
+#foot .logo {
+	margin-top: 0px;
+	height: 40px;
+	
+	img {
+		height: 35px;
+	}
+
+	span {
+		margin-left: 7px;
+		font-size: 20px;
+		line-height: 40px;
+	}
+}
+
 .nav {
-	margin: 60px -15px 40px 0;
+	margin: 40px -15px 40px 0;
 	float: right;
 	background: @nav;
 }
@@ -378,6 +421,7 @@ option {
 */
 
 #foot {
+	padding-top: 30px;
 	height: @height;
 	font-size: 22px;
 
