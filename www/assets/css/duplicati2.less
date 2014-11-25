@@ -79,7 +79,7 @@ a {
 		text-decoration: none;
 	}
 	&:focus {
-		color: @a;
+		color: inherit;
 	}
 }
 
@@ -137,13 +137,25 @@ a.warn:hover {
 }
 
 .nav {
-	margin: 60px 0 40px 0;
+	margin: 60px -15px 40px 0;
 	float: right;
 	background: @nav;
 }
 
-.nav>li>a:hover {
-	background: @nav-faded;
+.nav > li > a {
+	color: @a;
+
+	&:focus {
+		background: inherit;
+		color: @a;
+	}
+	&:hover {
+		background: @nav-faded;
+		color: @a;
+	}
+	&.active {
+		background: @box;
+	}
 }
 
 
@@ -154,6 +166,7 @@ a.warn:hover {
 .process-bar > div {
 	height: @height;
 	background: @bar;
+	overflow: hidden;
 }
 
 #percent {
@@ -371,7 +384,7 @@ option {
 		// Icon colour
 		color: @box-border;
 		&:hover {
-			color: @box-faded;
+			color: @box;
 		}
 	}
 }

@@ -5,6 +5,9 @@ $(function() {
 	 */
 	$('a[rel="log"], a[rel="log-close"]').click(function(e) {
 		e.preventDefault();
+		
+		// Toggle class the log
+		$('.nav a[rel="log"]').toggleClass('active');
 
 		// Show the log
 		$('#log').slideToggle();
