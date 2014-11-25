@@ -24,8 +24,12 @@ $(function() {
 			// Get the backup id
 			var b_id = $(this).attr('id').substr(4);
 
+			$('.b-space').hide();
+
 			// Show the status with id
-			$('#b-s-' + b_id).fadeIn();
+			$('#b-s-' + b_id).show('slide', { direction: 'left' }, function() {
+				$('.b-space').show();
+			});
 
 			$(this).addClass('active');
 		}
