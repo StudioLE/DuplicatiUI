@@ -4,7 +4,7 @@ $(function() {
 	 * Backups list
 	 */
 	// Get the template
-	$.get('assets/mst/backup-list.mst', function(template) {
+	$.get('assets/mst/backup-list.mustache', function(template) {
 
 		// Get data 
 		$.getJSON('assets/demo/demo-list-backups.json', function(data) {
@@ -23,9 +23,11 @@ $(function() {
 	 * Append options to backups list
 	 */
 	// Get the template
-	$.get('assets/mst/backup-list-append.mst', function(template) {
+	$.get('assets/mst/backup-list-append.mustache', function(template) {
 		// Render the template with lang data
-		var rendered = Mustache.render(template, lang.backup_list_append);
+		var rendered = Mustache.render(template, {
+			'titles': lang.backup_list_append
+		});
 		
 		// Output the template
 		$('#b-list-append').html(rendered);

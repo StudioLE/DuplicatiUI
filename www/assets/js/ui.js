@@ -15,7 +15,7 @@ $(function() {
 	/*
 	 * Title click
 	 */
-	$('.b-title').click(function(e) {
+	$(document.body).on('click', '.b-title', function(e) {
 		// Close all currently open panels
 		close_all();
 
@@ -50,6 +50,26 @@ $(function() {
 		var method = $(this).attr('rel').substr(0,1);
 	
 		b_title.addClass('active');
+
+
+		// If the method is edit then we'll need to fetch data for the backup
+		if(method == 'e') {
+			$.get('assets/mst/backup-edit.mustache', function(edit_template) {
+				$.get('assets/mst/backup-edit-section.mustache', function(section_template) {
+					// Render the template
+					var rendered = Mustache.render(edit_template, {
+						'sections': lang.backup_edit_sections,
+						'b_id': b_id
+					},
+					{
+						'section': section_template,
+					});
+					
+					// Output the template
+					$('#b-' + method + '-' + b_id).html(rendered);
+				});
+			});
+		}
 
 		// Show the status
 		$('#b-s-' + b_id).show(0, function(){

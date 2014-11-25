@@ -1,0 +1,78 @@
+{{#backups}}
+	<div class="row">
+
+	 	<!-- // Backup title -->
+		<div class="col-sm-offset-1 col-sm-5 b-title" id="b-t-{{Backup.ID}}">
+			<div class="valign right">
+				<span class="title">
+					{{Backup.Name}}
+				</span>
+				<span class="status">
+					{{Backup.Status}}
+				</span>
+				<span>
+					<a href="#{{Backup.ID}}" rel="edit"><i class="fa fa-pencil-square-o"></i></a><a href="#{{Backup.ID}}" rel="actions"><i class="fa fa-cog"></i></a>
+				</span>
+			</div> <!-- .valign -->
+		</div>
+
+		<!-- // Backup status -->
+		<div class="col-sm-5 b-status" id="b-s-{{Backup.ID}}">
+			<div class="valign">
+				<div>
+					<span class="l">Last backup</span> <span>23 hours, 15 minutes ago</span>
+				</div>
+				<div>
+					<span class="l">Changes</span> <span>2 files, 15 MB</span>
+				</div>
+				<div>
+					<span class="l">Total</span> <span>271 files, 365 MB</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- // Backup close -->
+		<!--div class="col-sm-1 b-close" id="b-c-{{Backup.ID}}">
+		</div-->
+
+		<div class="col-sm-1 b-space">
+		</div>
+
+		<!-- // Backup edit -->
+		<div class="col-sm-5 b-edit" id="b-e-{{Backup.ID}}">
+		</div>
+
+		<!-- // Backup operations -->
+		<div class="col-sm-5 b-actions" id="b-a-{{Backup.ID}}">			
+				<a href="#">
+					<span class="l">Backup</span> <span>Run now</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Restore files</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Export</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span class="warn">Delete</span>
+				</a>		
+				<a href="#">
+					<span class="l">Advanced</span> <span>Verify backup files</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Repair local database</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span class="warn">Delete local database</span>
+				</a>
+				<a href="#">
+					<span class="l">Reporting</span> <span>Show log</span>
+				</a>
+				<a href="#">
+					<span class="l"></span> <span>Create bug report</span>
+				</a>
+		</div>
+
+
+	</div> <!-- .row -->
+{{/backups}}
