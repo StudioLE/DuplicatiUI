@@ -65,34 +65,35 @@
 	<!-- 
 			// Log
 	 -->
-
 	<div class="row" id="log">
 		<div class="col-xs-offset-1 col-xs-10 log">
-			<div class="row">
-				<div class="col-xs-5">
-					<label for="i1">Log Data</label>
-					<select id="i2">
-					  <option>Live</option>
-					  <option>2</option>
-					  <option>3</option>
-					  <option>4</option>
-					  <option>5</option>
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label for="i1" class="col-xs-2 control-label">Log Data</label>
+					<div class="col-xs-3">
+						<select id="i2" class="form-control">
+							<option>Live</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
 					</select>
-				</div>
-				<div class="col-xs-5">
-					<label for="i2">Log Level</label>
-					<select id="i2">
-					  <option>Profiling</option>
-					  <option>2</option>
-					  <option>3</option>
-					  <option>4</option>
-					  <option>5</option>
-					</select>
-				</div>
-				<div class="col-xs-2 right">
-					<a href="#" rel="log-close"><i class="fa fa-close"></i></a>
-				</div>
-			</div> <!-- .row -->
+					</div>
+					<label for="i2" class="col-xs-2 control-label">Log Level</label>
+					<div class="col-xs-3">
+						<select id="i2" class="form-control">
+							<option>Profiling</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+					<div class="col-xs-2 right">
+						<a href="#" rel="log-close"><i class="fa fa-close"></i></a>
+					</div>
+				</div> <!-- .form-group -->
+			</div> <!-- .form-horizontal -->
 			<div id="log-box">
 			</div> <!-- #log-box -->
 		</div>
