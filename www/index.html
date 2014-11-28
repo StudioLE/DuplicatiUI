@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<link href="http://fonts.googleapis.com/css?family=Exo:600|Cousine:400,700" rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Exo:600|Cousine:400,700">
 <link rel="stylesheet/less" href="assets/css/duplicati2.less">
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.0.0/less.min.js"></script>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link rel="shortcut icon" href="assets/icons/duplicati-favicon.png">
-<link rel="apple-touch-icon-precomposed" href="assets/icons/duplicati-touch-icon.png">
+<link rel="shortcut icon" href="assets/icons/duplicati-logo-icon.png">
+<link rel="apple-touch-icon-precomposed" href="assets/icons/duplicati-logo-icon.png">
 <link rel="author" href="/humans.txt" type="text/plain">
 </head>
 <body>
@@ -94,15 +94,6 @@
 				</div>
 			</div> <!-- .row -->
 			<div id="log-box">
-11/20/2014, 6:28:04 PM The operation List has started
-11/20/2014, 6:28:04 PM Starting - ExecuteScalar: INSERT INTO “Operation” (”Description”, “Timestamp”) VALUES (?, ?); SELECT last_insert_rowid();
-11/20/2014, 6:28:04 PM ExecuteScalar: INSERT INTO “Operation” (”Description”, “Timestamp”) VALUES (?, ?); SELECT last_insert_rowid(); took 00:00:00.007
-11/20/2014, 6:28:04 PM Starting - ExecuteReader: SELECT “ID”, “Timestamp” FROM “Fileset” ORDER BY “Timestamp” DESC
-11/20/2014, 6:28:04 PM Starting - ExecuteNonQuery: CREATE TEMPORARY TABLE “Filenames-49CD070F40E1A84AAB29C9E8381B016F” (”Path” TEXT NOT NULL)
-11/20/2014, 6:28:04 PM ExecuteNonQuery: CREATE TEMPORARY TABLE “Filenames-49CD070F40E1A84AAB29C9E8381B016F” (”Path” TEXT NOT NULL) took 00:00:00.001
-11/20/2014, 6:28:04 PM Starting - ExecuteNonQuery: INSERT INTO “Filenames-49CD070F40E1A84AAB29C9E8381B016F” SELECT DISTINCT “Path” FROM “File” WHERE “Path” 
-“Filesets-AF71BB74915E6C45A01A43A475CED90A” AS SELECT DISTINCT “ID” AS “FilesetID”, “Timestamp” AS “Timestamp” FROM “Fileset” WHERE “Timestamp” = ? took 
-
 			</div> <!-- #log-box -->
 		</div>
 	</div> <!-- .row -->
@@ -139,7 +130,7 @@
 			<div class="row">
 				<div class="col-xs-offset-1 col-xs-5">
 					<a href="#" class="logo">
-						<img src="assets/icons/duplicati-logo-icon.svg">
+						<img src="assets/icons/duplicati-logo-icon-blue.svg">
 						<span>Duplicati</span>
 					</a>
 				</div>

@@ -1,0 +1,9 @@
+
+11/20/2014, 6:28:04 PM The operation List has started
+11/20/2014, 6:28:04 PM Starting - ExecuteScalar: INSERT INTO “Operation” (”Description”, “Timestamp”) VALUES (?, ?); SELECT last_insert_rowid();
+11/20/2014, 6:28:04 PM ExecuteScalar: INSERT INTO “Operation” (”Description”, “Timestamp”) VALUES (?, ?); SELECT last_insert_rowid(); took 00:00:00.007
+11/20/2014, 6:28:04 PM Starting - ExecuteReader: SELECT “ID”, “Timestamp” FROM “Fileset” ORDER BY “Timestamp” DESC
+11/20/2014, 6:28:04 PM Starting - ExecuteNonQuery: CREATE TEMPORARY TABLE “Filenames-49CD070F40E1A84AAB29C9E8381B016F” (”Path” TEXT NOT NULL)
+11/20/2014, 6:28:04 PM ExecuteNonQuery: CREATE TEMPORARY TABLE “Filenames-49CD070F40E1A84AAB29C9E8381B016F” (”Path” TEXT NOT NULL) took 00:00:00.001
+11/20/2014, 6:28:04 PM Starting - ExecuteNonQuery: INSERT INTO “Filenames-49CD070F40E1A84AAB29C9E8381B016F” SELECT DISTINCT “Path” FROM “File” WHERE “Path” 
+“Filesets-AF71BB74915E6C45A01A43A475CED90A” AS SELECT DISTINCT “ID” AS “FilesetID”, “Timestamp” AS “Timestamp” FROM “Fileset” WHERE “Timestamp” = ? took 

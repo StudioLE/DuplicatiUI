@@ -1,8 +1,4 @@
 /*
-	// Mixins
-*/
-
-/*
 	// Colours
 */
 
@@ -89,12 +85,7 @@ a {
 }
 
 .l {
-	width: 100px;
 	color: @text-faded;
-	/*&:before {
-		content: '\a';
-		white-space: pre;
-	}*/
 }
 
 .warn {
@@ -144,14 +135,15 @@ a.warn:hover {
 	clear: both;
 
 	img {
-		height: @height - 5;
+		margin-top: 14px;
+		height: 40px;
 		display: block;
 		float: left;
 	}
 
 	span {
 		.title;
-		margin-left: 10px;
+		margin: 5px 0 0 10px;
 		display: block;
 		float: left;
 		color: mix(@white, @slate, 15%);
@@ -170,13 +162,14 @@ a.warn:hover {
 	height: 40px;
 	
 	img {
-		height: 35px;
+		margin-top: 7px;
+		height: 20px;
 	}
 
 	span {
-		margin-left: 7px;
+		margin: 3px 0 0 5px;
 		font-size: 20px;
-		line-height: 40px;
+		line-height: 30px;
 	}
 }
 
@@ -312,11 +305,7 @@ a.warn:hover {
 	margin-top: @spacing * 2;
 	height: @height;
 	border-left: @spacing solid @box;
-
-	span {
-		display: inline-block;
-		color: @a;
-	}
+	color: @a;
 
 	.l {
 		color: @text-faded-active;
@@ -350,10 +339,6 @@ a.warn:hover {
 	background: @box-faded;
 	border-left: @spacing solid @slate;
 
-	&:hover {
-		//background: @box;
-	}
-
 	span {
 		display: inline-block;
 	}
@@ -365,15 +350,14 @@ a.warn:hover {
 	}
 }
 
-.b-edit a, .b-actions a {
-	margin: 2px 0;
-	padding: 3px 0;
+.b-edit > .row, .b-actions a {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 5px;
+	padding-bottom: 3px;
 	display: block;
 
 	&:hover {
-		margin: 2px -15px;
-		border-left: 15px solid @box;
-		border-right: 15px solid @box;
 		background: @box;
 	
 		.l {
@@ -385,7 +369,7 @@ a.warn:hover {
 .b-section {
 	.hide;
 	margin: @spacing -15px;
-	padding: @spacing 5px;
+	padding: @spacing 15px @spacing 5px;
 	background: @box;
 	border-left: @spacing solid @box;
 	
@@ -398,16 +382,18 @@ label {
 	.l;
 	font-weight: normal;
 }
-input, select {
+.form-control {
+	padding: 6px 12px;
+	height: auto;
 	background: none;
 	border: none;
 	border-bottom: 1px solid @box-faded;
-	width: 200px;
+	border-radius: 0;
+	box-shadow: none;
+	color: @a;
+	font-size: 12px;
+	transition: none;
 	outline: 0;
-}
-
-input[type="checkbox"] {
-	width: inherit;
 }
 
 option {

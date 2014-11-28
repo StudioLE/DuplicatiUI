@@ -18,16 +18,13 @@
 
 		<!-- // Backup status -->
 		<div class="col-sm-5 b-status" id="b-s-{{Backup.ID}}">
-			<div class="valign">
-				<div>
-					<span class="l">Last backup</span> <span>23 hours, 15 minutes ago</span>
-				</div>
-				<div>
-					<span class="l">Changes</span> <span>2 files, 15 MB</span>
-				</div>
-				<div>
-					<span class="l">Total</span> <span>271 files, 365 MB</span>
-				</div>
+			<div class="row valign">
+				<div class="col-xs-4 l">Last backup</div>
+				<div class="col-xs-8">23 hours, 15 minutes ago</div>
+				<div class="col-xs-4 l">Changes</div>
+				<div class="col-xs-8">2 files, 15 MB</div>
+				<div class="col-xs-4 l">Total</div>
+				<div class="col-xs-8">271 files, 365 MB</div>
 			</div>
 		</div>
 
@@ -37,32 +34,35 @@
 
 		<!-- // Backup operations -->
 		<div class="col-sm-5 b-actions" id="b-a-{{Backup.ID}}">			
-				<a href="#">
-					<span class="l">Backup</span> <span>Run now</span>
+				<a href="#" class="row">
+					<div class="col-sm-4 l">Backup</div>
+					<div class="col-sm-8">Run now</div>
 				</a>
-				<a href="#">
-					<span class="l"></span> <span>Restore files</span>
+				<a href="#" class="row">
+					<div class="col-sm-offset-4 col-sm-8">Restore files</div>
 				</a>
-				<a href="#">
-					<span class="l"></span> <span>Export</span>
+				<a href="#" class="row">
+					<div class="col-sm-offset-4 col-sm-8">Export</div>
 				</a>
-				<a href="#">
-					<span class="l"></span> <span class="warn">Delete</span>
-				</a>		
-				<a href="#">
-					<span class="l">Advanced</span> <span>Verify backup files</span>
+				<a href="#" class="row">
+					<div class="col-sm-offset-4 col-sm-8 warn">Delete</div>
+				</a>	
+				<a href="#" class="row">
+					<div class="col-sm-4 l">Advanced</div>
+					<div class="col-sm-8">Verify backup files</div>
 				</a>
-				<a href="#">
-					<span class="l"></span> <span>Repair local database</span>
+				<a href="#" class="row">
+					<div class="col-sm-offset-4 col-sm-8">Repair local database</div>
 				</a>
-				<a href="#">
-					<span class="l"></span> <span class="warn">Delete local database</span>
+				<a href="#" class="row">
+					<div class="col-sm-offset-4 col-sm-8 warn">Delete local database</div>
 				</a>
-				<a href="#">
-					<span class="l">Reporting</span> <span>Show log</span>
+				<a href="#" class="row">
+					<div class="col-sm-4 l">Reporting</div>
+					<div class="col-sm-8">Show log</div>
 				</a>
-				<a href="#">
-					<span class="l"></span> <span>Create bug report</span>
+				<a href="#" class="row">
+					<div class="col-sm-offset-4 col-sm-8">Create bug report</div>
 				</a>
 		</div>
 

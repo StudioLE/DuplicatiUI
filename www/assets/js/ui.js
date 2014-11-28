@@ -9,6 +9,10 @@ $(function() {
 		// Toggle class the log
 		$('.nav a[rel="log"]').toggleClass('active');
 
+		$.get('assets/demo/log.txt', function(data) {
+			$('#log-box').html(data);
+		});
+		
 		// Show the log
 		$('#log').slideToggle();
 	});
