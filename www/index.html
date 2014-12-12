@@ -31,7 +31,8 @@
 		</div>
 		<div class="col-sm-5">
 			<ul class="nav nav-pills">
-				<li role="presentation"><a href="#pause" rel="pause"><i class="fa fa-pause"></i></a></li>
+				<li role="presentation"><a href="#pause" rel="srv-pause"><i class="fa fa-pause"></i></a></li>
+				<li role="presentation"><a href="#run" rel="srv-run" class="hide"><i class="fa fa-play"></i></a></li>
 				<li role="presentation"><a href="#log" rel="log">log</a></li>
 				<li role="presentation"><a href="#updates">updates</a></li>
 				<li role="presentation"><a href="#options">options</a></li>
@@ -56,7 +57,7 @@
 		</div>
 		<div class="col-xs-7">
 			<div id="percent"></div>
-			<div class="valign right">
+			<div class="valign right" id="process-status">
 				<span id="files-remain">1452</span> files, <span id="gb-remain">2.01</span> GB remaining
 			</div>
 		</div>

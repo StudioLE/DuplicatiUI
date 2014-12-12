@@ -28,8 +28,22 @@ var lang = {
 			content: 'My Docs',
 			section: [
 				{
-					'label': 'DOCS',
+					'label': 'Name',
 					'text': true
+				},
+				{
+					'label': 'Encryption',
+					'options': [
+						'None', 'aes', 'gpg'
+					]
+				},
+				{
+					'label': 'Passphrase',
+					'password': true
+				},
+				{
+					'label': 'Repeat',
+					'password': true
 				}
 			]
 		},
@@ -39,8 +53,12 @@ var lang = {
 			content: 'C:\\...\\Work\\, C:\\...\\Finances\\',
 			section: [
 				{
-					'label': 'FOLDERS',
+					'label': 'Folders',
 					'text': true
+				},
+				{
+					'label': 'Source data filters',
+					'textbox': true
 				}
 			]
 		},
@@ -91,8 +109,59 @@ var lang = {
 			content: 'Daily at 1pm',
 			section: [
 				{
-					'label': 'SCHEDULE',
+					'label': 'Schedule',
+					'checkbox': true
+				},
+				{
+					'label': 'Next time',
 					'text': true
+				},
+				{
+					'label': 'Next day',
+					'text': true
+				},
+				{
+					'label': 'Run again every',
+					'text': true
+				},
+				{
+					'label': 'Run period',
+					'select': true,
+					'options': [
+						'hours',
+						'days',
+						'weeks',
+						'months',
+						'years'
+					]
+				},
+				{
+					'label': 'Mondays',
+					'chckbox': true
+				},
+				{
+					'label': 'Tuesdays',
+					'chckbox': true
+				},
+				{
+					'label': 'Wednesdays',
+					'chckbox': true
+				},
+				{
+					'label': 'Thursdays',
+					'chckbox': true
+				},
+				{
+					'label': 'Fridays',
+					'chckbox': true
+				},
+				{
+					'label': 'Saturdays',
+					'chckbox': true
+				},
+				{
+					'label': 'Sundays',
+					'chckbox': true
 				}
 			]
 		},
@@ -102,8 +171,48 @@ var lang = {
 			content: 'None specified',
 			section: [
 				{
-					'label': 'OPTIONS',
+					'label': 'Max backup file size',
+					'checkbox': true
+				},
+				{
+					'label': 'Unit',
+					'select': true,
+					'options': [
+						'KByte',
+						'MByte',
+						'GByte',
+						'TByte'
+					]
+				},
+				{
+					'label': 'Keep backups',
+					'select': true,
+					'options': [
+						'for a specific time',
+						'forever',
+						'a specific number',
+						'months',
+						'years'
+					]
+				},
+				{
+					'label': 'Keep for',
 					'text': true
+				},
+				{
+					'label': 'Unit',
+					'select': true,
+					'options': [
+						'hours',
+						'days',
+						'weeks',
+						'months',
+						'years'
+					]
+				},
+				{
+					'label': 'Options',
+					'textbox': true
 				}
 			]
 		}

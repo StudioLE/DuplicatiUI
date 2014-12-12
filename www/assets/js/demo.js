@@ -25,6 +25,7 @@ $(function() {
 			files.html(files_c.toFixed(0));
 			if (percent >= 100) {
 				clearInterval(interval);
+				$('#process-status').html('Backup complete');
 			}
 		}, 500);
 	}

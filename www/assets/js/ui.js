@@ -19,6 +19,19 @@ $(function() {
 
 
 	/*
+	 * Server run / pause
+	 */
+	$(document.body).on('click', 'a[rel="srv-run"], a[rel="srv-pause"]', function(e) {
+		e.stopPropagation();
+
+		console.log("dsfsdfsdfsdfsdf");
+
+		// Toggle run / pause button
+		$(this).parent().parent().find('a[rel="srv-run"], a[rel="srv-pause"]').toggleClass('hide');
+	});
+
+
+	/*
 	 * Title click
 	 */
 	$(document.body).on('click', '.b-title', function(e) {
@@ -44,7 +57,18 @@ $(function() {
 
 
 	/*
-	 * Panel click
+	 * Backup run / pause
+	 */
+	$(document.body).on('click', 'a[rel="run"], a[rel="pause"]', function(e) {
+		e.stopPropagation();
+
+		// Toggle run / pause button
+		$(this).siblings('a[rel="run"], a[rel="pause"]').andSelf().toggleClass('hide');
+	});
+
+
+	/*
+	 * Backup edit / actions
 	 */
 	$(document.body).on('click', 'a[rel="edit"], a[rel="actions"]', function(e) {
 		e.stopPropagation();
